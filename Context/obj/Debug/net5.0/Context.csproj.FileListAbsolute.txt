@@ -1,0 +1,12 @@
+C:\Users\sachin.tiwari\source\repos\WebApp-Dapper\Context\bin\Debug\net5.0\Context.deps.json
+C:\Users\sachin.tiwari\source\repos\WebApp-Dapper\Context\bin\Debug\net5.0\Context.dll
+C:\Users\sachin.tiwari\source\repos\WebApp-Dapper\Context\bin\Debug\net5.0\ref\Context.dll
+C:\Users\sachin.tiwari\source\repos\WebApp-Dapper\Context\bin\Debug\net5.0\Context.pdb
+C:\Users\sachin.tiwari\source\repos\WebApp-Dapper\Context\obj\Debug\net5.0\Context.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sachin.tiwari\source\repos\WebApp-Dapper\Context\obj\Debug\net5.0\Context.AssemblyInfoInputs.cache
+C:\Users\sachin.tiwari\source\repos\WebApp-Dapper\Context\obj\Debug\net5.0\Context.AssemblyInfo.cs
+C:\Users\sachin.tiwari\source\repos\WebApp-Dapper\Context\obj\Debug\net5.0\Context.csproj.CoreCompileInputs.cache
+C:\Users\sachin.tiwari\source\repos\WebApp-Dapper\Context\obj\Debug\net5.0\Context.dll
+C:\Users\sachin.tiwari\source\repos\WebApp-Dapper\Context\obj\Debug\net5.0\ref\Context.dll
+C:\Users\sachin.tiwari\source\repos\WebApp-Dapper\Context\obj\Debug\net5.0\Context.pdb
+C:\Users\sachin.tiwari\source\repos\WebApp-Dapper\Context\obj\Debug\net5.0\Context.csprojAssemblyReference.cache
