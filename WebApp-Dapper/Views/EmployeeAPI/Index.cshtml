@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Models.Employee>
+<!-- Reference to JQuery -->
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+@{
+    ViewData["Title"] = "EmployeeAPI List";
+}
+
+<h1>Employee DashBoard</h1>
+
+
+<p>
+    <a class="btn btn-success" asp-controller="Employee" asp-action="Create">Add Employee</a>
+</p>
+<table class="table" id="tblEmployee">
+    <thead>
+        <tr>
+            <th>
+                S.N.
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+       
+    </tbody>
+</table>
+  
+
+    @section Scripts{
+
+        <script>
+            /* jQuery to call web API to get a list of products */
+            $(document).ready(function () {
+                ShowAllEmployee();
+
+                function ShowAllEmployee() {
+                    $.ajax({
+                        url: "https://localhost:44372/api/API/",
+                        type: "get",
+                        contentType: "application/Json",
+                        success: function (data) {
+                            $.each(data, function (i, item) {
+                                console.log(item)
+                                var rows = "<tr>" +
+                                    "<td>" + (i+1) + "</td>" +
+                                    "<td>" + item.name + "</td>" +
+                                    "<td>" + item.country + "</td>" +
+                                    "<td>" + item.city + "</td>" +
+                                    "<td>" + item.phone + "</td>" +
+                                    "<td> <a class='btn btn-secondary' href='/Employee/Edit/" + item.id + "'>Edit</a> || <a class='btn btn-danger' onclick='confirmDelete(" + item.id + ")'> Delete </a ></td>"
+                                    "</tr>";
+                                $('#tblEmployee tbody').append(rows);
+
+
+                            });
+                            console.log(data);
+                        }, // end of AJAX Success Function
+
+                        failure: function (data) {
+                            alert(data.responseText);
+                        }, // End of AJAX failure function
+                        error: function (data) {
+                            alert(data.responseText);
+                        } // End of AJAX error function
+
+                    });
+                }
+            });
+
+            /*to show delete confirmation dialog box*/
+            function confirmDelete(itemId) {
+
+                $('#hdnEmployeeId').val(itemId);
+                $('#exampleModal').modal('show');
+            }
+        </script>
+    }

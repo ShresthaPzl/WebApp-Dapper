@@ -1,0 +1,80 @@
+﻿@model Models.Employee
+@using Models;
+
+@{ 
+    ViewData["Title"] = "Create";
+}
+
+<h4>Add Employee</h4>
+
+<div>
+    <a id="back" class="btn btn-outline-secondary" asp-action="List">Back to List</a>
+</div>
+
+<hr />
+
+
+</script>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <input type="hidden" asp-for="Id" />
+
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <lable asp-for="Department_Id" class="control-label"> Select Department : </lable>
+                @Html.DropDownListFor(Model => Model.Department_Id, new SelectList(ViewBag.departments, "Department_Id", "Department_Name"), "Select Department", new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Country" class="control-label"></label>
+                <input asp-for="Country" class="form-control" />
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="City" class="control-label"></label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label"></label>
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+
+
+            <br />
+
+            <div class="form-group">
+                @if (Model.Id > 0)
+                {
+                    <button type="submit"> Update</button>
+                }
+                else
+                {
+                    <button type="submit"> Create</button>
+                }
+
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function displayMessage() {
+        $.ajax({
+               
+        });
+    }
+</script>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
