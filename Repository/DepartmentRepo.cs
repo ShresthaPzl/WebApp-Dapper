@@ -40,6 +40,14 @@ namespace Repository
 
         }
 
+        public int DepartmentCount()
+        {
+            param.Add("@Flag", "countD");
+            var departmentCount = _dbConnection.Query<int>(spName, param, commandType: CommandType.StoredProcedure).First();
+
+            return departmentCount;
+        }
+
         public List<Department> GetAllDepartment()
         {
             param.Add("@Flag", "Select");

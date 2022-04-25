@@ -18,5 +18,7 @@ namespace Models
         public int Department_Id { get; set; }
 
         public string StatusMessage { get; set; }
+
+        public int EmployeeCount { get; set; }
     }
 }

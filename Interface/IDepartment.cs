@@ -18,5 +18,7 @@ namespace Service
         public Response Update(Department department);
 
         public Response Delete(int id);
+
+        int DepartmentCount();
     }
 }

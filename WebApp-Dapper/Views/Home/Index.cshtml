@@ -1,8 +1,50 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@*@model Models.Employee*@
+
+@{
+    ViewBag.Title = "Home Page";
+
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <h1>Asp.Net MVC WebApp using Stored Procedure with Dapper!</h1>
+    <h1 class="display-4">Welcome!</h1>
+    <h1>Asp.Net MVC WebApp using Stored Procedure with Dapper.</h1>
+
 </div>
+
+<hr class="featurette-divider">
+
+<main>
+
+    <div class="container marketing">
+
+
+        <div class="row">
+            <div class="float-container">
+
+                <div class="float-child">
+                    <div class="centerDiv">
+                        <marquee width="35%" behavior="scroll" scrolldelay: 80; direction="right"><h1 class="count"><b>@ViewBag.employeeCount</b></h1></marquee>
+                        <h2>Employees</h2>
+                        <p>This is the total Employee count curren tly stored in this EMS.</p>
+                        <p><a class="btn btn-outline-info" href="/Employee/List">View details</a></p>
+                    </div>
+                </div>
+
+                <div class="float-child">
+                    <div class="centerDiv">
+                        <marquee width="35%" behavior="scroll" scrolldelay: 80; direction="right"><h1 class="count"><b>@ViewBag.departmentCount</b></h1></marquee>
+                        <h2>Employees</h2>
+                        <p>This is the total Employee count currently stored in this EMS.</p>
+                        <p><a class="btn btn-outline-info" href="/Department/List">View details</a></p>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</main>
+

@@ -74,11 +74,14 @@ namespace Repository
             param.Add("@Department_Id", employee.Department_Id);
             Response employees = _dbConnection.Query<Response>(spName, param, commandType: CommandType.StoredProcedure).FirstOrDefault();
             return employees;
-            
+        }
 
-      
+        public int EmployeeCount()
+        {
+            param.Add("@Flag", "countE");
+            var employeeCount = _dbConnection.Query<int>(spName, param, commandType: CommandType.StoredProcedure).First();
 
-             
+            return employeeCount;
         }
     }
 }

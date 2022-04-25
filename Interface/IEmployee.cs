@@ -21,6 +21,8 @@ namespace Interface
 
         Response Delete(int id);
 
+        int EmployeeCount();
+
 
 
     }
