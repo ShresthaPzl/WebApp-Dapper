@@ -21,58 +21,101 @@
         <form asp-action="Create">
             <input type="hidden" asp-for="Id" />
 
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
+            <div class="form-group"> 
+                <div class="form-group" style="float:right;">
+                    <label>
+                        Active :
+                    </label>
+                    <div class="form-check form-check-inline">
+                        <label>
+                            Yes
+                        </label>
+                        @Html.RadioButtonFor(model => model.ActiveStatus, 'Y')
+                    </div>
+                    <div class="form-check form-check-inline">
+                        No
+                        @Html.RadioButtonFor(model => model.ActiveStatus, 'N')
+                    </div>
+                </div>
+                    
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
 
-            <div class="form-group">
-                <lable asp-for="Department_Id" class="control-label"> Select Department : </lable>
-                @Html.DropDownListFor(Model => Model.Department_Id, new SelectList(ViewBag.departments, "Department_Id", "Department_Name"), "Select Department", new { @class = "form-control" })
-            </div>
+                <div class="form-group">
+                    <lable asp-for="Department_Id" class="control-label"> Select Department</lable>
+                    @Html.DropDownListFor(Model => Model.Department_Id, new SelectList(ViewBag.departments, "Department_Id", "Department_Name"), "Select Department", new { @class = "form-control" })
+                </div>
 
-            <div class="form-group">
-                <label asp-for="Country" class="control-label"></label>
-                <input asp-for="Country" class="form-control" />
-                <span asp-validation-for="Country" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="City" class="control-label"></label>
-                <input asp-for="City" class="form-control" />
-                <span asp-validation-for="City" class="text-danger"></span>
-            </div>
+                <div class="form-group">
+                    <label asp-for="Country" class="control-label"></label>
+                    <input asp-for="Country" class="form-control" />
+                    <span asp-validation-for="Country" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="City" class="control-label"></label>
+                    <input asp-for="City" class="form-control" />
+                    <span asp-validation-for="City" class="text-danger"></span>
+                </div>
 
-            <div class="form-group">
-                <label asp-for="Phone" class="control-label"></label>
-                <input asp-for="Phone" class="form-control" />
-                <span asp-validation-for="Phone" class="text-danger"></span>
-            </div>
+                <div class="form-group">
+                    <label asp-for="Phone" class="control-label"></label>
+                    <input asp-for="Phone" class="form-control" />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Gender :
+                    </label>
+                    <div class="form-check form-check-inline">
+                        <label>
+                            Male
+                        </label>
+                        @Html.RadioButtonFor(model => model.Gender, "Male")
+                    </div>
+                    <div class="form-check form-check-inline">
+                        Female
+                        @Html.RadioButtonFor(model => model.Gender, "Female")
+                    </div>
+                </div>
 
 
-            <br />
 
-            <div class="form-group">
-                @if (Model.Id > 0)
-                {
-                    <button type="submit"> Update</button>
-                }
-                else
-                {
-                    <button type="submit"> Create</button>
-                }
+                <br />
 
-            </div>
-        </form>
+                <div class="form-group">
+                    @if (Model.Id > 0)
+                    {
+                        <button type="submit" class="btnsubmit"> Update</button>
+                    }
+                    else
+                    {
+                        <button type="submit" class="btnsubmit"> Create</button>
+                    }
+
+                </div>
+</form>
     </div>
 </div>
 
 <script>
-    function displayMessage() {
-        $.ajax({
-               
+
+    debugger;
+    $(document).ready(function () {
+        $('.btnsubmit').click(function () {
+            var status;
+            if (document.getElementsByClassName('form-check-input').checked) {
+                status = "Y";
+            } else {
+                status = 'N';
+            }
         });
-    }
+        
+    })
+
+
 </script>
 
     @section Scripts {

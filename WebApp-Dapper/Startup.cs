@@ -36,7 +36,6 @@ namespace WebApp_Dapper
             // Register Your regular repositories
             services.AddScoped<IEmployee, EmployeeRepo>();
             services.AddScoped<IDepartment, DepartmentRepo>();
-
             services.AddControllersWithViews();
         }
 

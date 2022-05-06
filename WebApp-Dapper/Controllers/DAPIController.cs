@@ -1,11 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Models;
 using Service;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace WebApp_Dapper.Controllers
 {
@@ -37,7 +33,7 @@ namespace WebApp_Dapper.Controllers
         [HttpPost]
         public object CSreate(Department department)
         {
-            Response departments = new();
+            Response departments;
             if(department.Department_Id > 0)
             {
                 departments = _department.Update(department); 

@@ -1,12 +1,6 @@
 ﻿using Interface;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Models;
-using Service;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace WebApp_Dapper.Controllers
 {
@@ -22,6 +16,7 @@ namespace WebApp_Dapper.Controllers
 
         public APIController(IEmployee employee)
         {
+
             _employee = employee;
         }
 
@@ -43,11 +38,11 @@ namespace WebApp_Dapper.Controllers
         [HttpPost]
         public object Create(Employee employee)
         {
-            Response employees = new();
+            Response employees;
             if (employee.Id > 0)
             {
 
-                 employees = _employee.Update(employee);
+                employees = _employee.Update(employee);
 
             }
             else

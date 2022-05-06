@@ -13,38 +13,44 @@
 
 <hr class="featurette-divider">
 
-<main>
 
-    <div class="container marketing">
+<div class="row col-xs-12">
+    <div class="box">
+        <main>
+
+            <div class="container marketing">
 
 
-        <div class="row">
-            <div class="float-container">
+                <div class="row">
+                    <div class="float-container">
 
-                <div class="float-child">
-                    <div class="centerDiv">
-                        <marquee width="35%" behavior="scroll" scrolldelay: 80; direction="right"><h1 class="count"><b>@ViewBag.employeeCount</b></h1></marquee>
-                        <h2>Employees</h2>
-                        <p>This is the total Employee count curren tly stored in this EMS.</p>
-                        <p><a class="btn btn-outline-info" href="/Employee/List">View details</a></p>
+                        <div class="float-child">
+                            <div class="centerDiv">
+                                <marquee width="35%" behavior="scroll" scrolldelay: 80; direction="right"><h1 class="count"><b>@ViewBag.employeeCount</b></h1></marquee>
+                                <h2>Employees</h2>
+                                <p> Total Employees count currently stored in this EMS. </p>
+                                <p><a class="btn btn-outline-info" href="/Employee/List">View details</a></p>
+                            </div>
+                        </div>
+
+                        <div class="float-child">
+                            <div class="centerDiv">
+                                <marquee width="35%" behavior="scroll" scrolldelay: 80; direction="right"><h1 class="count"><b>@ViewBag.departmentCount</b></h1></marquee>
+                                <h2>Departments</h2>
+                                <p>Total Departments count currently operating in this EMS.</p>
+                                <p><a class="btn btn-outline-info" href="/Department/List">View details</a></p>
+                            </div>
+                        </div>
+
                     </div>
-                </div>
 
-                <div class="float-child">
-                    <div class="centerDiv">
-                        <marquee width="35%" behavior="scroll" scrolldelay: 80; direction="right"><h1 class="count"><b>@ViewBag.departmentCount</b></h1></marquee>
-                        <h2>Employees</h2>
-                        <p>This is the total Employee count currently stored in this EMS.</p>
-                        <p><a class="btn btn-outline-info" href="/Department/List">View details</a></p>
-                    </div>
+
                 </div>
 
             </div>
 
+        </main>
 
-        </div>
+    </div >
 
-    </div>
-
-</main>
-
+</div>

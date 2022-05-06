@@ -3,11 +3,8 @@ using Models;
 using System.Collections.Generic;
 using System.Linq;
 using Interface;
-using Microsoft.Extensions.Configuration;
 using System.Data;
-using System.Data.SqlClient;
-using System;
-using System.Web.Http;
+
 
 namespace Repository
 {
@@ -38,6 +35,8 @@ namespace Repository
             param.Add("@Country", employee.Country);
             param.Add("@City", employee.City);
             param.Add("@Phone", employee.Phone);
+            param.Add("@Gender", employee.Gender);
+            param.Add("@Status", employee.ActiveStatus);
             param.Add("@Department_Id", employee.Department_Id);
             var employees = _dbConnection.QueryFirstOrDefault<Response>(spName, param, commandType: CommandType.StoredProcedure);
             return employees;
@@ -71,6 +70,8 @@ namespace Repository
             param.Add("@Country", employee.Country);
             param.Add("@City", employee.City);
             param.Add("@Phone", employee.Phone);
+            param.Add("@Gender", employee.Gender);
+            param.Add("@Status", employee.ActiveStatus);
             param.Add("@Department_Id", employee.Department_Id);
             Response employees = _dbConnection.Query<Response>(spName, param, commandType: CommandType.StoredProcedure).FirstOrDefault();
             return employees;
@@ -83,5 +84,7 @@ namespace Repository
 
             return employeeCount;
         }
+
+
     }
 }
